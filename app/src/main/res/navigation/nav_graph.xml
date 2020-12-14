@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="uz.triples.sellme.ui.LoginFragment"
+        android:name="uz.triples.sellme.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="uz.triples.sellme.ui.RegistrationFragment"
+        android:name="uz.triples.sellme.login.RegistrationFragment"
         android:label="fragment_registration"
         tools:layout="@layout/fragment_registration" />
 </navigation>

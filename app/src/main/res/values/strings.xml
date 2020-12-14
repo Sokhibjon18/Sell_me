@@ -16,4 +16,5 @@
     <string name="log_out">Log out</string>
     <string name="facebook_app_id">1290059847997141</string>
     <string name="fb_login_protocol_scheme">fb1290059847997141</string>
+    <string name="registration_error">Sorry something went wrong, please try again later</string>
 </resources>
