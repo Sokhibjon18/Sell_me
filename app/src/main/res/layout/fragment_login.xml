@@ -15,7 +15,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
-            android:src="@drawable/logo"
+            android:src="@drawable/logo_temp"
             app:layout_constraintBottom_toTopOf="@id/emailLogin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -51,6 +51,8 @@
             app:layout_constraintTop_toBottomOf="@id/emailLogin"
             app:layout_constraintWidth_percent="0.8"
             app:passwordToggleEnabled="true"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
             app:passwordToggleTint="@color/etBorderColorLogin">
 
             <EditText
@@ -163,7 +165,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:text="@string/sign_up"
-                android:textColor="@color/blue"
+                android:textColor="@color/orange"
                 android:textStyle="bold" />
 
         </LinearLayout>

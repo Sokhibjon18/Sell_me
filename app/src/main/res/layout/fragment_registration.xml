@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:src="@drawable/logo"
+        android:src="@drawable/logo_temp"
         app:layout_constraintBottom_toTopOf="@id/nameRegistration"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -183,7 +183,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:text="@string/login"
-            android:textColor="@color/blue"
+            android:textColor="@color/orange"
             android:textStyle="bold" />
 
     </LinearLayout>
