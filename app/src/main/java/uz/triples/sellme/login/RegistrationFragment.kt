@@ -5,7 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_registration.*
 import uz.triples.sellme.R
@@ -14,11 +15,10 @@ import uz.triples.sellme.utils.Helpers
 class RegistrationFragment : Fragment(R.layout.fragment_registration) {
 
     private lateinit var loading: AlertDialog
+    private val viewModel: SignInSharedVM by activityViewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val viewModel: SignInSharedVM by viewModels()
 
         signUpButton.setOnClickListener {
             when {
@@ -67,6 +67,22 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
                     loading.show()
                 }
             }
+        }
+
+        google.setOnClickListener {
+            viewModel.loginWith(0)
+        }
+
+        facebook.setOnClickListener {
+            viewModel.loginWith(1)
+        }
+
+        message.setOnClickListener {
+            findNavController().popBackStack()
+        }
+
+        login.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 }

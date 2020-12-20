@@ -16,6 +16,7 @@ class SplashActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
+                finish()
                 startActivity(Intent(this@SplashActivity, HomeActivity::class.java))
             }
         }.start()
