@@ -6,7 +6,6 @@ data class CategoryData(
     val image: Int
 )
 
-
 data class ProductData(
     val id: Int,
     val image: Int,

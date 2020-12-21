@@ -13,9 +13,11 @@ import uz.triples.sellme.app.App
 fun showLog(st: String, tag: String = "TTT") =
     Log.d(tag, st)
 
-fun showToast(message: String) =
-    Toast.makeText(App.instance, message, Toast.LENGTH_SHORT).show()
+fun Activity.showToast(message: String) =
+    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 
+fun Fragment.showToast(message: String) =
+    Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
 
 fun Fragment.hideKeyboard() {
     view?.let { activity?.hideKeyboard(it) }

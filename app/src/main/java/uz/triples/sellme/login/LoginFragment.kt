@@ -7,7 +7,9 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_login.*
 import uz.triples.sellme.R
+import uz.triples.sellme.app.App
 import uz.triples.sellme.utils.Helpers
+import uz.triples.sellme.utils.showToast
 
 class LoginFragment : Fragment(R.layout.fragment_login) {
 
@@ -34,7 +36,10 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 emailLogin.text.toString(),
                 passwordLogin.text.toString()
             ).observe(viewLifecycleOwner, {
-                Helpers().toast(requireActivity(), it)
+                showToast(it)
+                if (it == "Welcome back"){
+                    App.sharedPreferences.edit().putBoolean("entered", true).apply()
+                }
             })
         }
 
@@ -51,7 +56,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         }
 
         message.setOnClickListener {
-            Helpers().toast(requireActivity(),"You are currently entering with email!")
+            showToast("You are currently entering with email!")
         }
     }
 }

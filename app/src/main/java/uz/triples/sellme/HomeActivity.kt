@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 import com.facebook.*
 import com.facebook.login.LoginResult
 import com.facebook.login.widget.LoginButton
@@ -15,8 +16,10 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import uz.triples.sellme.app.App
 import uz.triples.sellme.login.SignInSharedVM
 import uz.triples.sellme.utils.Helpers
+import uz.triples.sellme.utils.showToast
 
 class HomeActivity : AppCompatActivity() {
 
@@ -106,6 +109,7 @@ class HomeActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     Log.d(TAG, "signInWithCredential:success")
+                    App.sharedPreferences.edit().putBoolean("entered", true).apply()
                 } else {
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
                 }
@@ -120,10 +124,11 @@ class HomeActivity : AppCompatActivity() {
                         "$email@sellMe.uz",
                         password
                     ).observe(this,{it2 ->
-                        Helpers().toast(this, it2)
+                        showToast(it2)
                     })
                 } else {
-                    Helpers().toast(this,"Registration completed")
+                    showToast("Registration completed")
+                    App.sharedPreferences.edit().putBoolean("entered", true).apply()
                 }
             })
     }

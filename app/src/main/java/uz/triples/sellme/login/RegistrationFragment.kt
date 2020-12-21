@@ -10,7 +10,9 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_registration.*
 import uz.triples.sellme.R
+import uz.triples.sellme.app.App
 import uz.triples.sellme.utils.Helpers
+import uz.triples.sellme.utils.showToast
 
 class RegistrationFragment : Fragment(R.layout.fragment_registration) {
 
@@ -54,8 +56,9 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
                         emailRegistration.text.toString(),
                         passwordRegistration.text.toString()
                     ).observe(viewLifecycleOwner, {
-                        Helpers().toast(requireActivity(), it)
+                        showToast(it)
                         loading.dismiss()
+                        App.sharedPreferences.edit().putBoolean("entered", true).apply()
                     })
                     val loadingDialog = AlertDialog.Builder(requireContext())
                     loadingDialog.setView(
