@@ -3,7 +3,7 @@
 
     <string name="facebook_app_id">398112938195567</string>
     <string name="fb_login_protocol_scheme">fb398112938195567</string>
-    
+
     <string name="google_client_id">417612654099–4macjv1pp5am3vlq425uss7kcd0oc2nl.apps.googleusercontent.com</string>
     <string name="google_client_secret">zd88lvvucrOikGOeakfCdt6q</string>
 
@@ -22,4 +22,7 @@
     <string name="confirm_your_password">Confirm your password</string>
     <string name="log_out">Log out</string>
     <string name="registration_error">Sorry something went wrong, please try again later</string>
+
+
+    <string name="accessgalery">Access to your gallery is restricted. Please  check your settings and try again</string>
 </resources>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/mainScreen">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -19,4 +19,18 @@
         android:name="uz.triples.sellme.login.RegistrationFragment"
         android:label="fragment_registration"
         tools:layout="@layout/fragment_registration" />
+    <fragment
+        android:id="@+id/mainScreen"
+        android:name="uz.triples.sellme.main.MainScreen"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainScreen_to_cameraScreen"
+            app:destination="@id/cameraScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/cameraScreen"
+        android:name="uz.triples.sellme.main.CameraScreen"
+        android:label="fragment_camera"
+        tools:layout="@layout/fragment_camera" />
 </navigation>
